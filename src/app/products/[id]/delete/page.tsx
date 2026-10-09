@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { notFound, redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { getProduct } from "@/lib/products";
@@ -8,7 +9,7 @@ type DeleteProductPageProps = {
   params: Promise<{ id: string }>;
 };
 
-export default async function DeleteProductPage({ params }: DeleteProductPageProps) {
+async function DeleteProductContent({ params }: DeleteProductPageProps) {
   const session = await auth();
   if (!session?.user) {
     redirect("/");
@@ -33,5 +34,13 @@ export default async function DeleteProductPage({ params }: DeleteProductPagePro
         <Link href="/">ยกเลิก</Link>
       </div>
     </main>
+  );
+}
+
+export default function DeleteProductPage({ params }: DeleteProductPageProps) {
+  return (
+    <Suspense fallback={<main><p>กำลังโหลดข้อมูล...</p></main>}>
+      <DeleteProductContent params={params} />
+    </Suspense>
   );
 }
