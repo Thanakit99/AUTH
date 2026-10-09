@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #fcfbf9; /* สีครีมมินิมอลละมุนตา */
+    color: #2b2b2b;
+    font-family: 'Kanit', sans-serif, system-ui, sans-serif;
+  }
+}
+
+/* กรอบมินิมอลสำหรับกล่องหลัก */
+.minimal-box {
+  background: #ffffff;
+  border: 2px solid #e2ded8;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* ปุ่มกดทั่วไป: มีกรอบชัดเจนและลูกเล่นยุบตัวเวลาคลิก */
+.minimal-btn {
+  background: #ffffff;
+  color: #2b2b2b;
+  border: 2px solid #2b2b2b;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-weight: 500;
+  box-shadow: 0 3px 0 #2b2b2b;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.minimal-btn:hover {
+  background: #f4f1ea;
+}
+
+.minimal-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #2b2b2b;
+}
+
+/* ปุ่มหลัก/เน้น (Primary) */
+.minimal-btn-primary {
+  background: #2b2b2b;
+  color: #ffffff;
+  border: 2px solid #2b2b2b;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-weight: 500;
+  box-shadow: 0 3px 0 #000000;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.minimal-btn-primary:hover {
+  background: #404040;
+}
+
+.minimal-btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #000000;
+}
+
+/* ช่องกรอกข้อมูล (Input) มีกรอบชัดเจน */
+.minimal-input {
+  background: #ffffff;
+  border: 2px solid #d2ccc4;
+  border-radius: 10px;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.minimal-input:focus {
+  border-color: #2b2b2b;
+}
+
+/* ป้ายแท็กมินิมอล */
+.minimal-tag {
+  background-color: #f4f1ea;
+  color: #5c534e;
+  border: 1.5px solid #d6cebf;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
